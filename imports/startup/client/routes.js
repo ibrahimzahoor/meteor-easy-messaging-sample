@@ -10,6 +10,6 @@ import '../../ui/pages/home.js';
 FlowRouter.route('/', {
   name: 'homepage',
   action() {
-    BlazeLayout.render('Layout', { sidebar: 'Sidebar', home: 'ConversationShow'});
+    BlazeLayout.render('Layout', { sidebar: 'Sidebar', main: 'Home'});
   },
 });
