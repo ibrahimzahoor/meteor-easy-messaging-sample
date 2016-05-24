@@ -1,6 +1,10 @@
 <template name="Layout">
   <div id="container" class="">
     {{> Template.dynamic template=sidebar}}
-    {{> Template.dynamic template=main}}
+    <div class="content-overlay"></div>
+
+    <div id="content-container">
+      {{> Template.dynamic template=main}}
+    </div>
   </div>
 </template>

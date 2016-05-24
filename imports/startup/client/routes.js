@@ -4,12 +4,25 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 // Import to load these templates
 import '../../ui/layouts/layout.js';
 import '../../ui/pages/sidebar.js';
-import '../../ui/pages/home.js';
 
 
 FlowRouter.route('/', {
   name: 'homepage',
   action() {
     BlazeLayout.render('Layout', { sidebar: 'Sidebar', main: 'Home'});
+  },
+});
+
+FlowRouter.route('/conversation/:_id', {
+  name: 'conversation.show',
+  action() {
+    BlazeLayout.render('Layout', { sidebar: 'Sidebar', main: 'ConversationShow' });
+  },
+});
+
+FlowRouter.route('/users', {
+  name: 'users.show',
+  action() {
+    BlazeLayout.render('Layout', { sidebar: 'Sidebar', main: 'Users' });
   },
 });

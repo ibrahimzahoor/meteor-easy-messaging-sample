@@ -1,1 +1,0 @@
-import './conversations-list.html';

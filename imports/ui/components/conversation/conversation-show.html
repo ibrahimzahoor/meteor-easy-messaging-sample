@@ -1,0 +1,21 @@
+<template name="ConversationShow">
+  <div class="page lists-show">
+    <nav class="js-title-nav">
+      <h1 class="js-edit-list title-page">
+        <span class="title-wrapper">{{title}}</span>
+        <span class="count-list">10</span>
+      </h1>
+
+      {{> ConversationReply}}
+
+    </nav>
+
+    <div class="content-scrollable list-items">
+      {{#each messages}}
+        {{> ConversationMessage}}
+      {{/each}}
+
+    </div>
+
+  </div>
+</template>

@@ -1,0 +1,17 @@
+<template name="ConversationList">
+  <div class="list-todos">
+
+    {{> ConversationNew}}
+
+
+    {{#each conversations}}
+      {{> ConversationListItem }}
+    {{else}}
+      <div class="wrapper-message">
+        <div class="title-message">No Conversations here</div>
+        <div class="subtitle-message">Start new conversation using the button above</div>
+      </div>
+    {{/each}}
+
+  </div>
+</template>
