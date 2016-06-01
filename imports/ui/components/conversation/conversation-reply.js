@@ -14,8 +14,8 @@ Template.ConversationReply.events({
     if (!$input.val()) {
       return;
     }
-    
-    var conversation = Meteor.conversations.findOne({ _id: FlowRouter.getParam('_id') });
+
+    var conversation = Meteor.conversations.findOne();
     conversation.sendMessage($input.val());
 
     $input.val('');

@@ -2,10 +2,30 @@
   "name": "messaging",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "lint": "eslint .",
+    "pretest": "npm run lint --silent"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "meteor"
+    ],
+    "extends": [
+      "airbnb",
+      "plugin:meteor/recommended"
+    ],
+    "rules": {}
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
     "meteor-node-stubs": "~0.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
+    "eslint-plugin-meteor": "^3.5.2",
+    "eslint-plugin-react": "^5.1.1"
   }
 }

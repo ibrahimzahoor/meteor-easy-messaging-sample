@@ -6,12 +6,16 @@ import './conversation-list-item.html';
 
 
 Template.ConversationListItem.onCreated(function() {
-  console.log('this', this);
 });
 
 Template.ConversationListItem.helpers({
-  label() {
-    var participants = this._participants;
-    return Meteor.users.findOne({_id: participants[1]}).username;
+  label(param) {
+    // var participants = this._participants;
+    // let user = Meteor.users.findOne({_id: participants[1]});
+    // return user && user.username;
+    console.log('param', param);
+    console.log('this', this.conversation.lastMessage());
+    // return this.usernameTitle();
+
   }
 });

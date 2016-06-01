@@ -3,15 +3,16 @@
 
     {{> ConversationNew}}
 
-
-    {{#each conversations}}
-      {{> ConversationListItem }}
-    {{else}}
-      <div class="wrapper-message">
-        <div class="title-message">No Conversations here</div>
-        <div class="subtitle-message">Start new conversation using the button above</div>
-      </div>
-    {{/each}}
+    {{#if conversationsListReady}}
+      {{#each conversationListItem in conversationsList}}
+        {{> ConversationListItem conversation = conversationListItem}}
+      {{else}}
+        <div class="wrapper-message">
+          <div class="title-message">No Conversations here</div>
+          <div class="subtitle-message">Start new conversation or sign in to show previous conversations</div>
+        </div>
+      {{/each}}
+    {{/if}}
 
   </div>
 </template>

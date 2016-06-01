@@ -11,10 +11,11 @@
     </nav>
 
     <div class="content-scrollable list-items">
-      {{#each messages}}
-        {{> ConversationMessage}}
-      {{/each}}
-
+      {{#if conversationReady}}
+        {{#each message in messages}}
+          {{> ConversationMessage message}}
+        {{/each}}
+      {{/if}}
     </div>
 
   </div>

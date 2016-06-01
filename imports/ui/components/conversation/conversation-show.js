@@ -11,39 +11,42 @@ import './conversation-reply.js';
 
 Template.ConversationShow.onCreated(function() {
 
-  // this.state = new ReactiveDict();
-  // this.state.setDefault({
-  //   conversationsLength: 0,
-  // });
-  //
-  // this.autorun(() => {
-  //    console.log('Reactive dict: ', this.state.get('editing'));
-  // });
-  //
-  // this.getConversations = () => {
-  //
-  // }
+  this.autorun(() => {
+    console.log('Template.currentData()', Template.currentData());
+    new SimpleSchema({
+      conversationReady: { type: Boolean },
+      conversation: { type: Object, optional: true },
+      messages: { type: Mongo.Cursor },
+    }).validate(Template.currentData());
+  });
 
 });
 
+
 Template.ConversationShow.helpers({
-  messages() {
-    var conversationId = FlowRouter.getParam('_id');
-    return Meteor.messages.find({
-      conversationId: conversationId
-    });
-  },
-  title() {
-    var conversationId = FlowRouter.getParam('_id');
-    var conversation = Meteor.conversations.findOne({
-      _id: conversationId
-    });
-    if(conversation) {
-      var participants = conversation._participants;
-      return Meteor.users.findOne({_id: participants[1]}).username;
-    }
-    return " ";
-  }
+  // messages() {
+  //   const instance = Template.instance();
+  //   const conversationId = instance.getConversationId();
+  //   return Meteor.messages.find({
+  //     conversationId: conversationId
+  //   });
+  // },
+  // title() {
+  //   const instance = Template.instance();
+  //   const conversationId = instance.getConversationId();
+  //   let conversation = Meteor.conversations.findOne({
+  //     _id: conversationId
+  //   });
+  //   // console.log('this', this);
+  //   // console.log('conversation', conversation);
+  //   // return conversation.usernameTitle();
+  //   // if(conversation) {
+  //   //   var participants = conversation._participants;
+  //   //   let user = Meteor.users.findOne({_id: participants[1]});
+  //   //   return user && user.username;
+  //   // }
+  //   // return " ";
+  // }
 });
 
 Template.ConversationShow.events({

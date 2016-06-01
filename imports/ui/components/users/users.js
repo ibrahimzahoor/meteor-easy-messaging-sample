@@ -4,6 +4,12 @@ import { Conversation } from 'meteor/socialize:messaging';
 
 import './users.html';
 
+Template.Users.onCreated(function() {
+  this.autorun(() => {
+    this.subscribe('users');
+  });
+});
+
 Template.Users.helpers({
   users(){
     return Meteor.users.find({
@@ -32,7 +38,7 @@ Template.Users.events({
              console.log("no link");
              var conversation = new Conversation().save();
              conversation.addParticipant(user);
-             FlowRouter.go('conversation.show', { _id: conversationId });
+             FlowRouter.go('conversation.show', { _id: conversation._id });
             //  conversation.sendMessage("beginning");
            }
        });
