@@ -30,7 +30,17 @@ Meteor.publishComposite("conversation.messages", function(conversationId) {
           }, {
             fields: { username: 1 }
           });
-        }
+
+        },
+        children: [
+          {
+            find: function(user, conversation) {
+              return Meteor.participants.find({
+                userId: user._id
+              });
+            }
+          }
+        ]
       }
     ]
   };

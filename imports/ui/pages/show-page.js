@@ -11,7 +11,6 @@ Template.ShowPage.onCreated(function() {
 
   this.autorun(() => {
     this.subscribe('conversation.messages', this.getConversationId());
-    // this.subscribe('viewingConversation', this.getConversationId());
   });
 
 });
@@ -19,7 +18,7 @@ Template.ShowPage.onCreated(function() {
 Template.ShowPage.onRendered(function() {
   this.autorun(() => {
     if (this.subscriptionsReady()) {
-      console.log('subscriptionsReady');
+      console.log('subscriptionsReady ShowPage');
     }
   });
 });
@@ -27,19 +26,15 @@ Template.ShowPage.onRendered(function() {
 Template.ShowPage.helpers({
   conversation(){
     const instance = Template.instance();
-    const conversationId = instance.getConversationId();
-    console.log('conversation id', conversationId);
     const conversation = Meteor.conversations.findOne({
-      _id: conversationId
+      _id: instance.getConversationId()
     });
-    console.log('conversation', conversation);
     const messages = conversation.messages();
 
     return {
       conversationReady: instance.subscriptionsReady(),
-      conversation: conversation._document,
+      conversation,
       messages
     };
-
   }
 });

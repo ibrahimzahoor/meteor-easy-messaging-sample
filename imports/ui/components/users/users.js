@@ -29,13 +29,13 @@ Template.Users.events({
      Meteor.user().findExistingConversationWithUsers(
       participants, function(error, result){
            if(result){
-             console.log("link exists");
+            //  console.log("link exists");
              conversationId = result;
              console.log("conversationId", conversationId);
              FlowRouter.go('conversation.show', { _id: conversationId });
            }
            else {
-             console.log("no link");
+            //  console.log("no link");
              var conversation = new Conversation().save();
              conversation.addParticipant(user);
              FlowRouter.go('conversation.show', { _id: conversation._id });

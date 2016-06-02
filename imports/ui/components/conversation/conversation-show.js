@@ -12,12 +12,15 @@ import './conversation-reply.js';
 Template.ConversationShow.onCreated(function() {
 
   this.autorun(() => {
-    console.log('Template.currentData()', Template.currentData());
     new SimpleSchema({
       conversationReady: { type: Boolean },
-      conversation: { type: Object, optional: true },
+      conversation: { type: Conversation },
       messages: { type: Mongo.Cursor },
     }).validate(Template.currentData());
+  });
+
+  this.autorun(() => {
+    this.subscribe('viewingConversation', this.data.conversation._id);
   });
 
 });

@@ -6,5 +6,5 @@ import './conversation-message.html';
 
 
 Template.ConversationMessage.onCreated(function() {
-  // console.log('this', this);
+
 });

@@ -1,30 +1,5 @@
 import { Meteor } from 'meteor/meteor';
 
-Meteor.publishComposite("conversations", function(){
-  if (!this.userId) {
-    return this.ready();
-  }
-
-  return {
-    find: function() {
-      return Meteor.conversations.find({
-        _participants: this.userId
-      });
-    },
-    children: [
-      {
-        find: function(conversation) {
-          return Meteor.users.find({
-            _id: {$in: conversation._participants }
-          }, {
-            fields: { username: 1 }
-          });
-        }
-      }
-    ]
-  };
-});
-
 Meteor.publishComposite("conversations.list", function() {
   if (!this.userId) {
     return this.ready();
@@ -54,7 +29,16 @@ Meteor.publishComposite("conversations.list", function() {
           }, {
             fields: { username: 1 }
           });
-        }
+        },
+        children: [
+          {
+            find: function(user, conversation) {
+              return Meteor.participants.find({
+                userId: user._id
+              });
+            }
+          }
+        ]
       }
     ]
   };

@@ -2,11 +2,18 @@
   <div class="page lists-show">
     <nav class="js-title-nav">
       <h1 class="js-edit-list title-page">
-        <span class="title-wrapper">{{title}}</span>
-        <span class="count-list">10</span>
+        {{#each participant in conversation.participants}}
+          <span class="title-wrapper">{{participant.user.username}}</span>
+
+          {{#if participant.isTyping }}
+            typing...
+          {{/if}}
+
+        {{/each}}
+        <!-- <span class="count-list">10</span> -->
       </h1>
 
-      {{> ConversationReply}}
+      {{> ConversationReply conversation=conversation}}
 
     </nav>
 

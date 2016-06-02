@@ -24,7 +24,8 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 #Routing
 kadira:flow-router
 kadira:blaze-layout
-alanning:roles
+arillo:flow-router-helpers
+zimme:active-route
 
 #Accounts
 accounts-ui
@@ -38,6 +39,7 @@ meteortoys:allthings
 
 
 socialize:messaging
+alanning:roles
 reywood:publish-composite
 aldeed:simple-schema
 aldeed:collection2

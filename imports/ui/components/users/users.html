@@ -11,13 +11,19 @@
     </nav> -->
 
     <div class="content-scrollable list-items">
+      <h2> All Users </h2>
       <ul>
          {{#each users}}
+            <br />
            <li name="user">
               <a class="user" href='#'>
-               {{username}}
+               {{username}} :
+               {{#each emails}}
+                {{address}}
+               {{/each}}
              </a>
            </li>
+           <br />
          {{/each}}
        </ul>
     </div>
