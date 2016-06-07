@@ -12,8 +12,11 @@ import { Conversation } from 'meteor/socialize:messaging';
 
 //Add Collection helper methods here
 
-// Conversation.methods({
-//   usernameTitle() {
-//     return "username";
-//   }
-// })
+Conversation.methods({
+  usernameTitle() {
+    console.log('this userId', this.userId);
+    console.log('MEteor userId', Meteor.userId());
+
+    return "username";
+  }
+})

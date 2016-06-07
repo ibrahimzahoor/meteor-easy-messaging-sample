@@ -7,4 +7,5 @@ import '../../api/messages/messages.js';
 import '../../api/messages/server/publications.js';
 
 import '../../api/users/methods.js';
+import '../../api/users/users.js';
 import '../../api/users/server/publications.js';

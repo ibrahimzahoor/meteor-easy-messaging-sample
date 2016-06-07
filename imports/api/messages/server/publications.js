@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import { Conversation, Participant, Message } from 'meteor/socialize:messaging';
 
 Meteor.publishComposite("conversation.messages", function(conversationId) {
   check(conversationId, String);
@@ -9,14 +10,14 @@ Meteor.publishComposite("conversation.messages", function(conversationId) {
 
   return {
     find: function() {
-      return Meteor.conversations.find({
+      return Conversation.collection.find({
         _id: conversationId
       });
     },
     children: [
       {
         find: function(conversation) {
-          return Meteor.messages.find({
+          return Message.collection.find({
             conversationId: conversation._id
           }, {
             sort: { date: -1 }
@@ -35,7 +36,7 @@ Meteor.publishComposite("conversation.messages", function(conversationId) {
         children: [
           {
             find: function(user, conversation) {
-              return Meteor.participants.find({
+              return Participant.collection.find({
                 userId: user._id
               });
             }

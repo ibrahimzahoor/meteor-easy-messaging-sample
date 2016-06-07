@@ -1,7 +1,12 @@
 <template name="ConversationListItem">
   <a href="{{pathFor '/conversation/:id' id=conversation._id}}" title="Practice Name 1" class="list-todo active">
-    <!-- <span class="count-list">5</span> -->
+
+
+
     {{#each participant in conversation.participants}}
+      {{#if participant.user.isOnline}}
+        <span class="count-list"></span>
+      {{/if}}
       Username: {{participant.user.username}}
       {{#if participant.isTyping }}
         <br />

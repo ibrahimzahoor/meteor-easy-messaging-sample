@@ -43,3 +43,5 @@ alanning:roles
 reywood:publish-composite
 aldeed:simple-schema
 aldeed:collection2
+socialize:user-model
+socialize:user-presence

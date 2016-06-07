@@ -31,7 +31,7 @@ Template.ConversationReply.onCreated(function() {
         self.typingSubscription.stop();
         self.typingSubscription = null;
         self.typingTimeout = null;
-      }, 3000);
+      }, 2000);
     }
     else {
 
@@ -68,9 +68,8 @@ Template.ConversationReply.events({
     instance.setTypingStatus(false);
 
   },
-  
-  'keydown input[type=text]'(event, instance) {
-    console.log('keydown called');
+
+  'keydown input[type=text]': _.throttle(function (event, instance) {
     instance.setTypingStatus(true);
-  }
+  }, 300)
 });

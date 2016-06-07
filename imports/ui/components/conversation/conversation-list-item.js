@@ -10,7 +10,9 @@ Template.ConversationListItem.onCreated(function() {
 });
 
 Template.ConversationListItem.helpers({
-  conversationId() {
-    
+  online(status) {
+    if(status == 'online')
+      return true;
+    return false;
   }
 });
