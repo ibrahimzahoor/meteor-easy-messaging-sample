@@ -3,16 +3,23 @@ import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import './conversation-list-item.html';
+import './conversation-list-item.css';
 
 
 Template.ConversationListItem.onCreated(function() {
 
+  this.autorun(() => {
+    new SimpleSchema({
+      conversation: { type: Conversation },
+    }).validate(Template.currentData());
+  });
+
 });
 
 Template.ConversationListItem.helpers({
-  online(status) {
-    if(status == 'online')
-      return true;
-    return false;
+  participant() {
+    const instance = Template.instance();
+    const participant = instance.data.conversation.participants(1).fetch()[0];
+    return participant;
   }
 });

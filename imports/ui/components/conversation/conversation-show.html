@@ -1,29 +1,18 @@
 <template name="ConversationShow">
-  <div class="page lists-show">
-    <nav class="js-title-nav">
-      <h1 class="js-edit-list title-page">
-        {{#each participant in conversation.participants}}
-          <span class="title-wrapper">{{participant.user.username}}</span>
 
-          {{#if participant.isTyping }}
-            typing...
-          {{/if}}
+  <div id="chat_title">
+		<i id="nav" class="fa fa-bars"></i>
+		<h2 class="{{participant.availibilityStatus}}">{{participant.user.username}}</h2>
+	</div>
 
-        {{/each}}
-        <!-- <span class="count-list">10</span> -->
-      </h1>
+  <div id="chat_history">
+    {{#if conversationReady}}
+      {{#each message in messages}}
+        {{> ConversationMessage message=message}}
+      {{/each}}
+    {{/if}}
+	</div>
 
-      {{> ConversationReply conversation=conversation}}
+  {{> ConversationReply conversation=conversation}}
 
-    </nav>
-
-    <div class="content-scrollable list-items">
-      {{#if conversationReady}}
-        {{#each message in messages}}
-          {{> ConversationMessage message}}
-        {{/each}}
-      {{/if}}
-    </div>
-
-  </div>
 </template>

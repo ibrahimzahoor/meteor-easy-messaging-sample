@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import './conversation-reply.html';
+import './conversation-reply.css';
 
 Template.ConversationReply.onCreated(function() {
   this.autorun(() => {
@@ -53,10 +54,11 @@ Template.ConversationReply.helpers({
 });
 
 Template.ConversationReply.events({
-  'submit .js-todo-new'(event, instance) {
+  'click #send_button'(event, instance) {
     event.preventDefault();
 
-    const $input = $(event.target).find('[type=text]');
+    const $input = $('#input_area');
+
     if (!$input.val()) {
       return;
     }
@@ -69,7 +71,7 @@ Template.ConversationReply.events({
 
   },
 
-  'keydown input[type=text]': _.throttle(function (event, instance) {
+  'keydown #input_area': _.throttle(function (event, instance) {
     instance.setTypingStatus(true);
   }, 300)
 });

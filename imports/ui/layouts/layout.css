@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+html, body {
+	overflow:hidden;
+	font-family: 'Open-Sans', sans-serif;
+	margin: 0;
+}
+
+#container {
+	display: block;
+	height: 100vh;
+	widows: 100vw;
+}
+
+@media screen and (min-width: 700px) {
+	#sidebar {
+		display: inline-block !important;
+	}
+
+	#show-page {
+		display: inline-block !important;
+	}
+}

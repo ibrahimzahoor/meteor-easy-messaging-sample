@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 
-import './show-page.html'
+import './show-page.html';
+import './show-page.css'
 
 // Components used inside the template
 import '../components/conversation/conversation-show.js';
@@ -18,7 +19,7 @@ Template.ShowPage.onCreated(function() {
 Template.ShowPage.onRendered(function() {
   this.autorun(() => {
     if (this.subscriptionsReady()) {
-      console.log('subscriptionsReady ShowPage');
+      console.log('subscriptionsReady :: ShowPage');
     }
   });
 });

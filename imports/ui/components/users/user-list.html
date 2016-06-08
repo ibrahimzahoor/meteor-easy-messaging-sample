@@ -1,0 +1,7 @@
+<template name="UserList">
+  <div id="contacts">
+    {{#each userListItem in usersList}}
+      {{> UserListItem user=userListItem}}
+    {{/each}}
+  </div>
+</template>

@@ -1,8 +1,6 @@
 <template name="ConversationList">
-  <div class="list-todos">
 
-    {{> ConversationNew}}
-
+  <div id="active_chats">
     {{#if conversationsListReady}}
       {{#each conversationListItem in conversationsList}}
         {{> ConversationListItem conversation = conversationListItem}}
@@ -13,6 +11,6 @@
         </div>
       {{/each}}
     {{/if}}
-
   </div>
+  
 </template>
