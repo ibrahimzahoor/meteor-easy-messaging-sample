@@ -4,11 +4,11 @@
 
     <div id="sidebar_title">
   		<i class="fa fa-bars" id="nav-sidebar"></i>
-  		<h2>User: {{> UserMenu}}</h2>
+  		<h2>{{> UserMenu}}</h2>
   	</div>
 
     <div id="sidebar_content">
-      {{> Template.dynamic (args)}}
+      {{> Template.dynamic (sidebarContentArgs)}}
   	</div>
 
     <div id="sidebar_control">

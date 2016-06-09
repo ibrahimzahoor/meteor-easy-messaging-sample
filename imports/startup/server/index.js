@@ -4,3 +4,6 @@ import './register-api.js';
 
 //Activate shell commands from meteor toys
 import'./meteortoys.js';
+
+//setup user presence
+import '../../api/users/users.js';

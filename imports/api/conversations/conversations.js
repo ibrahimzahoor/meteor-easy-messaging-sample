@@ -1,8 +1,6 @@
-import { Conversation } from 'meteor/socialize:messaging';
+import { Conversation, Participant } from 'meteor/socialize:messaging';
 
-import { Participant } from 'meteor/socialize:messaging';
-
-//Add items to Schema for a Converation --  use Simple Schema Manual
+//addition to Schema for a Converation can be done here --  use Simple Schema Manual
 
 // Conversation.appendSchema({
 //   "itemName": {
@@ -21,7 +19,7 @@ Conversation.methods({
 
     return "username";
   }
-})
+});
 
 
 Participant.methods({
@@ -29,4 +27,4 @@ Participant.methods({
     const user = Meteor.users.findOne({_id: this.userId});
     return user.status === 'online' && 'online';
   }
-})
+});

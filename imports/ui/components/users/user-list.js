@@ -11,15 +11,24 @@ Template.UserList.onCreated(function() {
   this.autorun(() => {
     new SimpleSchema({
       usersListReady: { type: Boolean },
-      usersList: { type: Mongo.Cursor },
+      onChangeTab: { type: Function },
+      usersList: { type: Mongo.Cursor }
     }).validate(Template.currentData());
   });
 });
 
 Template.UserList.helpers({
-
+  userListArgs(user){
+    const instance = Template.instance();
+    return {
+      user,
+      onChangeTab(tabName){
+        instance.data.onChangeTab(tabName);
+      }
+    }
+  }
 });
 
 Template.UserList.events({
-    
+
 });

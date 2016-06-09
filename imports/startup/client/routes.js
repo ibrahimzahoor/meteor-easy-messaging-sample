@@ -10,7 +10,7 @@ import '../../ui/pages/show-page.js';
 FlowRouter.route('/', {
   name: 'homepage',
   action() {
-    BlazeLayout.render('Layout', { sidebar: 'Sidebar', main: 'ShowPage'});
+    BlazeLayout.render('Layout', { sidebar: 'Sidebar'});
   },
 });
 

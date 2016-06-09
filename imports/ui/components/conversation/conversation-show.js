@@ -31,7 +31,8 @@ Template.ConversationShow.onCreated(function() {
 Template.ConversationShow.helpers({
   participant() {
     const instance = Template.instance();
-    const participant = instance.data.conversation.participants(1).fetch()[0];
+    const conversation = instance.data.conversation
+    const participant = conversation && conversation.participants(1).fetch()[0];
     return participant;
   }
 });

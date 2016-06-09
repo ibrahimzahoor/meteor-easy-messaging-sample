@@ -30,7 +30,7 @@ Template.ShowPage.helpers({
     const conversation = Meteor.conversations.findOne({
       _id: instance.getConversationId()
     });
-    const messages = conversation.messages();
+    const messages = conversation && conversation.messages();
 
     return {
       conversationReady: instance.subscriptionsReady(),

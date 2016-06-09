@@ -5,7 +5,7 @@
 		<div class="active_chat_details">
 			<span class="contact_title {{participant.availibilityStatus}}">{{participant.user.username}}</span>
 			<br>
-			<span class="last_message">{{conversation.lastMessage.body}}</span>
+			<span class="last_message">{{trimLastMessage conversation.lastMessage.body}}</span>
 		</div>
 	</a>
 

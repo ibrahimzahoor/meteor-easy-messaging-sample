@@ -1,7 +1,11 @@
 <template name="UserList">
   <div id="contacts">
-    {{#each userListItem in usersList}}
-      {{> UserListItem user=userListItem}}
-    {{/each}}
+    {{#if usersListReady}}
+      {{#each userListItem in usersList}}
+        {{> UserListItem (userListArgs userListItem)}}
+      {{else}}
+        <p>No Users Exists</p>
+      {{/each}}
+    {{/if}}
   </div>
 </template>

@@ -9,6 +9,8 @@ import '../components/users/user-list.js';
 
 Template.Sidebar.onCreated(function sidebarOnCreated() {
 
+  console.log('Sidebar.onCreated called ');
+
   this.state = new ReactiveDict();
   this.state.setDefault({
     selectedTab: 'conversations'
@@ -30,19 +32,25 @@ Template.Sidebar.onCreated(function sidebarOnCreated() {
   }
 
   this.getUsersListData = () => {
+    const self = this;
     const usersList = Meteor.users.find({
       _id: {
         $ne: Meteor.userId()
       }
     });
     return {
-      usersListReady: this.subscriptionsReady(),
+      usersListReady: self.subscriptionsReady(),
+      onChangeTab(tabName) {
+        self.state.set('selectedTab', tabName);
+      },
       usersList
     };
   }
 });
 
 Template.Sidebar.onRendered(function sidebarOnRendered() {
+  console.log('Sidebar.onRendered called');
+
   this.autorun(() => {
     if (this.subscriptionsReady()) {
       console.log('subscriptionsReady :: Sidebar');
@@ -52,7 +60,7 @@ Template.Sidebar.onRendered(function sidebarOnRendered() {
 
 
 Template.Sidebar.helpers({
-  args() {
+  sidebarContentArgs() {
     const instance = Template.instance();
     if(instance.state.get('selectedTab') === 'conversations') {
       return {
@@ -60,20 +68,11 @@ Template.Sidebar.helpers({
         data: instance.getConversationListData()
       }
     }
-    else {
+    else if(instance.state.get('selectedTab') === 'users') {
       return {
         template: 'UserList',
         data: instance.getUsersListData()
       }
-    }
-  },
-  sidebarContent() {
-    const instance = Template.instance();
-    if(instance.state.get('selectedTab') === 'conversations') {
-      return 'ConversationList';
-    }
-    else {
-      return 'UserList';
     }
   },
   isActive(tab) {

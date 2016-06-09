@@ -5,6 +5,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import './conversation-list-item.html';
 import './conversation-list-item.css';
 
+import '../../lib/helpers.js';
 
 Template.ConversationListItem.onCreated(function() {
 
