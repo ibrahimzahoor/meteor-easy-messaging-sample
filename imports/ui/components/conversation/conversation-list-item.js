@@ -24,3 +24,5 @@ Template.ConversationListItem.helpers({
     return participant;
   }
 });
+
+// Template.ConversationListItem2.replaces("ConversationListItem");

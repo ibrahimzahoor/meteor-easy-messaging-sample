@@ -5,7 +5,10 @@
 	padding: 10px 0;
 	font-family: 'Open-Sans', sans-serif;
 }
-
+div#active_chats {
+	display: inline-block;
+	width: 100%;
+}
 .active_chat_details .contact_name {
 
 }
