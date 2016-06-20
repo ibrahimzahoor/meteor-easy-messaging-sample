@@ -2,8 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
-import './conversation-list-item.html';
-import './conversation-list-item.css';
+import './list-item.html';
+import './list-item.css';
 
 import '../../lib/helpers.js';
 

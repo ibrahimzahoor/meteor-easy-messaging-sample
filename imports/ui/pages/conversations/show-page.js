@@ -4,19 +4,24 @@ import './show-page.html';
 import './show-page.css'
 
 // Components used inside the template
-import '../components/conversation/conversation-show.js';
+import '../../components/conversations/show.js';
 
-Template.ShowPage.onCreated(function() {
+Template.ConversationShowPage.onCreated(function() {
 
-  this.getConversationId = () => FlowRouter.getParam('_id');
+  this.autorun(() => {
+    new SimpleSchema({
+      'conversation._id': { type: String },
+    }).validate(Template.currentData());
+  });
+
+  this.getConversationId = () => Template.currentData().conversation._id;
 
   this.autorun(() => {
     this.subscribe('conversation.messages', this.getConversationId());
   });
-
 });
 
-Template.ShowPage.onRendered(function() {
+Template.ConversationShowPage.onRendered(function() {
   this.autorun(() => {
     if (this.subscriptionsReady()) {
       console.log('subscriptionsReady :: ShowPage');
@@ -24,7 +29,7 @@ Template.ShowPage.onRendered(function() {
   });
 });
 
-Template.ShowPage.helpers({
+Template.ConversationShowPage.helpers({
   conversation(){
     const instance = Template.instance();
     const conversation = Meteor.conversations.findOne({

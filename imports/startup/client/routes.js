@@ -3,8 +3,8 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 // Import to load these templates
 import '../../ui/layouts/layout.js';
-import '../../ui/pages/sidebar.js';
-import '../../ui/pages/show-page.js';
+import '../../ui/pages/application/sidebar.js';
+import '../../ui/pages/conversations/show-page.js';
 
 
 FlowRouter.route('/', {
@@ -16,8 +16,8 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/conversation/:_id', {
   name: 'conversation.show',
-  action() {
-    BlazeLayout.render('Layout', { sidebar: 'Sidebar', main: 'ShowPage' });
+  action(params, queryparams) {
+    BlazeLayout.render('Layout', { sidebar: 'Sidebar', main: 'ConversationShowPage', maindata: { conversation: { _id: params._id } } });
   },
 });
 

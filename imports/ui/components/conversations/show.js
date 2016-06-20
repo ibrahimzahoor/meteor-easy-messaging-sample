@@ -1,15 +1,12 @@
-import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
-import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Mongo } from 'meteor/mongo';
-import { _ } from 'meteor/underscore';
 
-import './conversation-show.html';
-import './conversation-show.css';
+import './show.html';
+import './show.css';
 
 // Components used inside the template
-import './conversation-message.js';
-import './conversation-reply.js';
+import './message.js';
+import './reply.js';
 
 Template.ConversationShow.onCreated(function() {
 

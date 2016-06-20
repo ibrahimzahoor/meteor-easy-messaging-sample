@@ -2,8 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
-import './conversation-message.html';
-import './conversation-message.css';
+import './message.html';
+import './message.css';
 
 
 Template.ConversationMessage.onCreated(function() {

@@ -1,13 +1,12 @@
 import { Bert } from 'meteor/themeteorchef:bert';
 
-import './user-list-item.html';
-import './user-list-item.css';
+import './list-item.html';
+import './list-item.css';
 
 Template.UserListItem.onCreated(function(){
   this.autorun(() => {
     new SimpleSchema({
       user: { type: User },
-      onChangeTab: { type: Function }
     }).validate(Template.currentData());
   });
 });
@@ -22,15 +21,11 @@ Template.UserListItem.events({
 
       Meteor.user().findExistingConversationWithUsers(
         participants,
-        function(error, result) {
-          if (result) {
-            conversationId = result;
-            console.log("conversationId", conversationId);
+        function(error, conversationId) {
+          if (conversationId) {
             FlowRouter.go('conversation.show', {
                 _id: conversationId
             });
-
-            instance.data.onChangeTab('conversations');
           }
           else {
             var conversation = new Conversation().save();
@@ -38,8 +33,6 @@ Template.UserListItem.events({
             FlowRouter.go('conversation.show', {
                 _id: conversation._id
             });
-
-            instance.data.onChangeTab('conversations');
           }
         });
       }
