@@ -37,7 +37,6 @@ fourseven:scss
 #debugOnly
 meteortoys:allthings
 
-
 socialize:messaging
 alanning:roles
 reywood:publish-composite
@@ -45,8 +44,6 @@ aldeed:simple-schema
 aldeed:collection2
 socialize:user-model
 socialize:user-presence
-
-
 fortawesome:fontawesome
 mizzao:jquery-ui
 themeteorchef:bert

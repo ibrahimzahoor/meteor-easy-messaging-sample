@@ -1,0 +1,25 @@
+<template name="ConversationList2">
+  <div class="container">
+    <div id="message-filter">
+      <select>
+        <option>All Messages</option>
+        <option>Unread Messages</option>
+        <option>Starred Messages</option>
+        <option>Archived Messages</option>
+      </select>
+    </div>
+
+    <div id="message-container">
+      {{#if conversationsListReady}}
+        {{#each conversationListItem in conversationsList}}
+          {{> ConversationListItem conversation = conversationListItem}}
+        {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">No Conversations here</div>
+            <div class="subtitle-message">Start new conversation or sign in to show previous conversations</div>
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+</template>
