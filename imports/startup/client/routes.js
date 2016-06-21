@@ -4,7 +4,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 // Import to load these templates
 import '../../ui/layouts/layout.js';
 import '../../ui/pages/application/sidebar.js';
-import '../../ui/pages/conversations/show-page.js';
+// import '../../ui/pages/conversations/show-page.js';
 
 
 FlowRouter.route('/', {

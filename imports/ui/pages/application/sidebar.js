@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import './sidebar.html';
 import './sidebar.css';
 
-import '../conversations/list-page.js';
+// import '../conversations/list-page.js';
 import '../users/list-page.js';
 
 // Components used inside the template
