@@ -28,10 +28,12 @@ Template.UserListItem.events({
             });
           }
           else {
-            var conversation = new Conversation().save();
-            conversation.addParticipant(instance.data.user);
-            FlowRouter.go('conversation.show', {
-                _id: conversation._id
+            Meteor.user().startNewConversationWithUsers(participants, function(error, conversationId) {
+              if(!error) {
+                FlowRouter.go('conversation.show', {
+                    _id: conversationId
+                });
+              }
             });
           }
         });
