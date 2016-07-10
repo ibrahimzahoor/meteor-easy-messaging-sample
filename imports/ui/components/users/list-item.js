@@ -17,29 +17,33 @@ Template.UserListItem.events({
     event.preventDefault();
 
     if(Meteor.user()) {
-      const participants = [instance.data.user._id];
+      const participant = instance.data.user._id;
 
-      Meteor.user().findExistingConversationWithUsers(
-        participants,
-        function(error, conversationId) {
-          if (conversationId) {
-            FlowRouter.go('conversation.show', {
-                _id: conversationId
-            });
-          }
-          else {
-            Meteor.user().startNewConversationWithUsers(participants, function(error, conversationId) {
-              if(!error) {
-                FlowRouter.go('conversation.show', {
-                    _id: conversationId
-                });
-              }
-            });
-          }
-        });
-      }
-      else {
-        Bert.alert( 'Sign in to start chat!', 'danger', 'growl-top-right' );
-      }
+      Meteor.user().startConversation(participant, function(error, result){
+        console.log("Meteor.user().startConversation Result", result);
+      });
+
+      // Meteor.user().findExistingConversationWithUsers(
+      //   participants,
+      //   function(error, conversationId) {
+      //     if (conversationId) {
+      //       FlowRouter.go('conversation.show', {
+      //           _id: conversationId
+      //       });
+      //     }
+      //     else {
+      //       Meteor.user().startNewConversationWithUsers(participants, function(error, conversationId) {
+      //         if(!error) {
+      //           FlowRouter.go('conversation.show', {
+      //               _id: conversationId
+      //           });
+      //         }
+      //       });
+      //     }
+      //   });
+    }
+    else {
+      Bert.alert( 'Sign in to start chat!', 'danger', 'growl-top-right' );
+    }
   },
 });
