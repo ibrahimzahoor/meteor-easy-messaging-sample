@@ -1,8 +1,8 @@
 <template name="UserList">
   <div id="contacts">
-    {{#if usersListReady}}
-      {{#each userListItem in usersList}}
-        {{> UserListItem (userListArgs userListItem)}}
+    {{#if Template.subscriptionsReady}}
+      {{#each user in usersList}}
+        {{> UserListItem user=user}}
       {{else}}
         <p>No Users Exists</p>
       {{/each}}

@@ -8,20 +8,32 @@ import './list.css';
 import './list-item.js';
 
 Template.UserList.onCreated(function() {
+  // this.autorun(() => {
+  //   new SimpleSchema({
+  //     usersListReady: { type: Boolean },
+  //     usersList: { type: Mongo.Cursor }
+  //   }).validate(Template.currentData());
+  // });
+
   this.autorun(() => {
-    new SimpleSchema({
-      usersListReady: { type: Boolean },
-      usersList: { type: Mongo.Cursor }
-    }).validate(Template.currentData());
+    this.subscribe('user.list');
   });
+
+  this.getUsersListData = () => {
+    const self = this;
+    const usersList = Meteor.users.find({
+      _id: {
+        $ne: Meteor.userId()
+      }
+    });
+    return usersList;
+  }
 });
 
 Template.UserList.helpers({
-  userListArgs(user){
+  usersList() {
     const instance = Template.instance();
-    return {
-      user
-    }
+    return instance.getUsersListData()
   }
 });
 

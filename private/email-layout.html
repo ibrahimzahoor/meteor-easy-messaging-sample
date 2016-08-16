@@ -1,0 +1,211 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>New Message</title>
+    <!-- TODO: Email Title -->
+    <style>
+      @import url(http://fonts.googleapis.com/css?family=Roboto:300);
+      /*Calling our web font*/
+      /* Some resets and issue fixes */
+
+      #outlook a {
+        padding: 0;
+      }
+
+      body {
+        width: 100% !important;
+        -webkit-text;
+        size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .ReadMsgBody {
+        width: 100%;
+      }
+
+      .ExternalClass {
+        width: 100%;
+      }
+
+      .backgroundTable {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        !important;
+      }
+
+      table td {
+        border-collapse: collapse;
+      }
+
+      .ExternalClass * {
+        line-height: 115%;
+      }
+      /* End reset */
+      /* These are our tablet/medium screen media queries */
+      @media screen and (max-width: 630px) {
+        /* Display block allows us to stack elements */
+        *[class="mobile-column"] {
+          display: block;
+        }
+        /* Some more stacking elements */
+        *[class="mob-column"] {
+          float: none !important;
+          width: 100% !important;
+        }
+        /* Hide stuff */
+        *[class="hide"] {
+          display: none !important;
+        }
+        /* This sets elements to 100% width and fixes the height issues too, a god send */
+        *[class="100p"] {
+          width: 100% !important;
+          height: auto !important;
+        }
+        /* For the 2x2 stack */
+        *[class="condensed"] {
+          padding-bottom: 40px !important;
+          display: block;
+        }
+        /* Centers content on mobile */
+        *[class="center"] {
+          text-align: center !important;
+          width: 100% !important;
+          height: auto !important;
+        }
+        /* 100percent width section with 20px padding */
+        *[class="100pad"] {
+          width: 100% !important;
+          padding: 20px;
+        }
+        /* 100percent width section with 20px padding left & right */
+        *[class="100padleftright"] {
+          width: 100% !important;
+          padding: 0 20px;
+        }
+        /* 100percent width section with 20px padding top & bottom */
+        *[class="100padtopbottom"] {
+          width: 100% !important;
+          padding: 20px 0;
+        }
+      }
+
+    </style>
+
+  </head>
+
+  <div style="background:#FFFFFF;">
+
+    <body style="padding:0; margin:0" bgcolor="#FFFFFF">
+
+      <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0" width="100%">
+        <tr>
+          <td align="center" valign="top">
+            <table width="640" border="0" cellspacing="0" cellpadding="0" class="hide">
+              <tr>
+                <td height="20"></td>
+              </tr>
+            </table>
+            <!-- <table width="640" cellspacing="0" cellpadding="0" bgcolor="#" class="100p">
+              <tr>
+                <td background="images/header-bg.jpg" bgcolor="#3b464e" width="640" valign="top" class="100p">
+                  <div>
+                    <table width="640" border="0" cellspacing="0" cellpadding="20" class="100p">
+                      <tr>
+                        <td valign="top">
+                          <table border="0" cellspacing="0" cellpadding="0" width="600" class="100p">
+                            <tr>
+                              <td align="center" width="50%" class="100p">
+                                <h2>Header</h2>
+                              </td>
+                               <td align="left" width="50%" class="100p">
+                                <img src="images/logo.png" alt="Logo" border="0" style="display:block"/>
+                              </td>
+                              <td width="50%" class="hide" align="right" style="font-size:16px; color:#FFFFFF;">
+                                <font face="'Roboto', Arial, sans-serif">
+                                  <a href="#" style="color:#FFFFFF; text-decoration:none;">HOME</a>
+                                  &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
+                                  <a href="#" style="color:#FFFFFF; text-decoration:none;">HOME</a>
+                                  &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
+                                  <a href="#" style="color:#FFFFFF; text-decoration:none;">HOME</a>
+                                </font>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </table> -->
+            {{{body}}}
+            <!-- <table width="640" border="0" cellspacing="0" cellpadding="20" bgcolor="#2a8e9d" class="100p">
+              <tr>
+                <td align="center" style=" font-size:14px;">
+                  <font face="'Roboto', Arial, sans-serif">
+                    <div id="description-box" style="background-color:white; border:1px solid #E2E2E2; padding:30px; text-align:center" bgcolor="white" align="center">
+                      <img src="http://i.imgur.com/iieHMYm.png" class="img-circle" alt="Cinque Terre" width="100" height="100" style="border:0; vertical-align:middle; border-radius:50%; margin:20px 0" valign="middle">
+                      <div class="dentist-name">Practice Dr. Mendez</div>
+                      <div class="dentist-location" style="font-size:0.8em">Santiago, Mexico</div>
+                      <div class="dentist-about" style="display:block; margin-top:20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                  </font>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" style="font-size:14px; color:black;">
+                  <font face="'Roboto', Arial, sans-serif">
+                    <div class="chat-message sent-message row" style="color: #000 !important; text-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-right: -15px; margin-left: -15px; padding: 0 40px;">
+                      <div class="bubble-head col-xs-2 col-sm-2 col-md-2 col-lg-2" style="color: #000 !important; text-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; float: right; width: 16.66666667%; display: block;">
+                        <img src="http://i.imgur.com/iieHMYm.png" class="img-circle" alt="Cinque Terre" style="color: #000 !important; text-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; page-break-inside: avoid; max-width: 100% !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; vertical-align: middle; border-radius: 50%; height: auto; width: 100%; border: 0;">
+                      </div>
+                      <div class="chat-text sent-text tri-right border top-right-in col-xs-10 col-sm-10 col-md-10 col-lg-10" style="color: #000 !important; text-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative; min-height: 1px; float: right; width: 83.33333333%; display: block; background-color: white; padding: 0; border: 1px solid #e2e2e2;">
+                        <p style="color: #000 !important; text-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; orphans: 3; widows: 3; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0 0 10px; padding: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+                    </div>
+                  </font>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="font-size:14px; color:black;">
+                  <font face="'Roboto', Arial, sans-serif">
+                    <div class="chat-message received-message row" style="color: #000 !important; text-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-right: -15px; margin-left: -15px; padding: 0 40px;">
+                      <div class="bubble-head col-xs-2 col-sm-2 col-md-2 col-lg-2" style="color: #000 !important; text-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; float: left; width: 16.66666667%; display: block;">
+                        <img src="http://i.imgur.com/iieHMYm.png" class="img-circle" alt="Cinque Terre" style="color: #000 !important; text-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; page-break-inside: avoid; max-width: 100% !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; vertical-align: middle; border-radius: 50%; height: auto; width: 100%; border: 0;">
+                      </div>
+                      <div class="chat-text received-text tri-left border top-left-in col-xs-10 col-sm-10 col-md-10 col-lg-10" style="color: #000 !important; text-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative; min-height: 1px; float: left; width: 83.33333333%; display: block; background-color: white; padding: 0; border: 1px solid #e2e2e2;">
+                        <p style="color: #000 !important; text-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; orphans: 3; widows: 3; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0 0 10px; padding: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+                    </div>
+                  </font>
+                </td>
+              </tr>
+            </table> -->
+            <table width="640" border="0" cellspacing="0" cellpadding="20" bgcolor="#ffffff" class="100p">
+              <tr>
+                <td align="left" width="50%" style="font-size:14px; color:#848484;">
+                  <font face="'Roboto', Arial, sans-serif">&copy; Dentist 2016</font>
+                </td>
+                <td align="right" width="50%" style="font-size:14px; color:#848484;">
+                  <font face="'Roboto', Arial, sans-serif">Unsubscribe</font>
+                </td>
+              </tr>
+            </table>
+            <table width="640" class="100p" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="50"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+    </body>
+  </div>
+
+</html>

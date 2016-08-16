@@ -2,7 +2,7 @@
   "name": "messaging",
   "private": true,
   "scripts": {
-    "start": "meteor run",
+    "start": "MAIL_URL=smtp://ibrahimzahoor:Ibby4927@smtp.sendgrid.net:587 meteor run",
     "lint": "eslint .",
     "pretest": "npm run lint --silent"
   },

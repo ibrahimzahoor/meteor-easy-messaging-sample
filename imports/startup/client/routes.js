@@ -17,7 +17,7 @@ FlowRouter.route('/', {
 FlowRouter.route('/conversation/:_id', {
   name: 'conversation.show',
   action(params, queryparams) {
-    BlazeLayout.render('Layout', { sidebar: 'Sidebar', main: 'ConversationShowPage', maindata: { conversation: { _id: params._id } } });
+    BlazeLayout.render('Layout', { sidebar: 'Sidebar', main: 'ConversationShowPage', maindata: { conversationId: params._id } });
   },
 });
 

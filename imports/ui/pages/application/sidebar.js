@@ -3,7 +3,8 @@ import './sidebar.html';
 import './sidebar.css';
 
 // import '../conversations/list-page.js';
-import '../users/list-page.js';
+// import '../users/list-page.js';
+import '../../components/users/list.js';
 
 // Components used inside the template
 import '../../components/application/user-menu.js';
@@ -12,7 +13,7 @@ import '../../components/application/user-menu.js';
 Template.Sidebar.onCreated(function sidebarOnCreated() {
   this.state = new ReactiveDict();
   this.state.setDefault({
-    selectedTab: 'conversations'
+    selectedTab: 'users'
   });
 });
 
@@ -34,7 +35,7 @@ Template.Sidebar.helpers({
     }
     else if(instance.state.get('selectedTab') === 'users') {
       return {
-        template: 'UsersListPage',
+        template: 'UserList',
       }
     }
   },
